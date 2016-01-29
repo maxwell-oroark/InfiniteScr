@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app = 'infinite'>
+	<head >
+		<script src = 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js'></script>
+		<script src = 'main.js'></script>
+		<link href = 'main.css' type = 'text/css' rel = 'stylesheet'>
+
+	</head>
+
+	<body ng-controller = 'conScroller'>
+
+	<!-- look into ng-scroll and also the window element -->
+
+
+		<div class = 'day' ng-repeat = "day in year | limitTo: pagesDisplayed : 0">
+			<div class = 'today'>
+				<h1>{{day | date : 'M/d/yy'}}</h1>
+			</div>
+			<div class = 'container'>
+				<div ng-repeat = "hour in hours">
+					<div class = "hour">
+						{{ hour.time }}
+					</div>
+					<div class = 'content'>
+					</div>
+				</div>
+			</div>
+		</div>	
+		
+	</body>
+
+</html>
